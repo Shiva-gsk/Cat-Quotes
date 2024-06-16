@@ -30,20 +30,20 @@ const App = () => {
       });
   }, [cnt]);
 
-  // useEffect(() => {
-  //   fetch(
-  //     `https://api.unsplash.com/photos/random?query=cats&count=1&client_id=YhKe1Ia7SccmrRBA3Z4oD5FMUmuUGf5g8h6F1_ODHis`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data[0].urls.regular);
-  //       setPhotos(`${data[0].urls.regular}`);
-  //       // images.src = data[0].urls.regular;
-  //     }).catch((error) => {
-  //      setError(error);
-  //      setLoading(false);
-  //    });
-  // }, []);
+  useEffect(() => {
+    fetch(
+      `https://api.unsplash.com/photos/random?query=cats&count=1&client_id=YhKe1Ia7SccmrRBA3Z4oD5FMUmuUGf5g8h6F1_ODHis`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data[0].urls.regular);
+        setPhotos(`${data[0].urls.regular}`);
+        // images.src = data[0].urls.regular;
+      }).catch((error) => {
+       setError(error);
+       setLoading(false);
+     });
+  }, []);
 
 
 
@@ -52,7 +52,7 @@ const App = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   const backgroundImageStyle = {
-    // backgroundImage: `url(${photos})`,
+    backgroundImage: `url(${photos})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: "100vh",
