@@ -40,8 +40,8 @@ const App = () => {
         setPhotos(`${data[0].urls.regular}`);
         // images.src = data[0].urls.regular;
       }).catch((error) => {
-       setError(error);
-       setLoading(false);
+      //  setError(error);
+      //  setLoading(false);
      });
   }, []);
 
@@ -67,7 +67,7 @@ const App = () => {
   return (
     <>
       <div style={backgroundImageStyle} className="flex flex-col gap-11">
-        <h1 className="m-10 text-[50px] font-serif bg-black opacity-60 p-3 px-7 rounded-2xl">Cat Quotes</h1>
+        <h1 className="m-10 text-[50px] font-serif bg-black opacity-60 p-3 px-7 rounded-2xl">Cat Facts</h1>
         <div className="w-100 bg-gray-50 p-5 px-7 rounded-2xl text-2xl font-serif opacity-60 shadow-lg text-orange-600">
           <ul className="">
             <li className="">{data}</li>
@@ -75,7 +75,7 @@ const App = () => {
         </div>
           <button onClick={() => {setcnt(cnt + 1);}
           } className="btn m-5 font-serif" >Next</button>
-          <div className="font-serif text-lg  bg-teal-500 opacity-60 p-3 px-7 rounded-2xl">No.of Quotes viewed this session: {cnt}</div>
+          <div className="font-serif text-lg  bg-teal-500 opacity-60 p-3 px-7 rounded-2xl">No.of Facts viewed this session: {cnt}</div>
       </div>
 
     </>
